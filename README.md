@@ -21,7 +21,7 @@ GitHub Actions (毎日 09:00 UTC / 18:00 JST)
        ├─ data/processed.json と比較して新規項目のみ抽出
        ├─ 新規項目ごとに Claude Code CLI で日本語技術解説記事を生成
        ├─ processed.json を更新
-       └─ git commit & push
+       └─ 別ブランチで commit & push → Pull Request 作成
 ```
 
 新規ニュースがない日は Claude Code API を呼び出さないため、コストを最小限に抑えられます。
