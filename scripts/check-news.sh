@@ -9,6 +9,7 @@ ARTICLES_DIR="$REPO_ROOT/articles"
 TODAY=$(date -u +"%Y-%m-%d")
 MAX_ARTICLES=5
 ARTICLES_GENERATED=0
+NEW_ITEMS_FOUND=0
 
 # processed.json が存在しない場合はエラー
 if [ ! -f "$PROCESSED_FILE" ]; then
@@ -118,6 +119,7 @@ if [ ${#NEW_RELEASES[@]} -eq 0 ]; then
   echo "  No new releases found."
 else
   echo "  Found ${#NEW_RELEASES[@]} new release(s): ${NEW_RELEASES[*]}"
+  NEW_ITEMS_FOUND=$((NEW_ITEMS_FOUND + ${#NEW_RELEASES[@]}))
   for tag in "${NEW_RELEASES[@]}"; do
     check_limit || break
 
@@ -156,6 +158,7 @@ if [ -n "$CHANGELOG_MD" ]; then
     echo "  No new changelog versions found."
   else
     echo "  Found ${#NEW_VERSIONS[@]} new version(s): ${NEW_VERSIONS[*]}"
+    NEW_ITEMS_FOUND=$((NEW_ITEMS_FOUND + ${#NEW_VERSIONS[@]}))
     for version in "${NEW_VERSIONS[@]}"; do
       check_limit || break
 
@@ -195,6 +198,7 @@ if [ -n "$BLOG_HTML" ]; then
     echo "  No new relevant blog posts found."
   else
     echo "  Found ${#NEW_SLUGS[@]} new blog post(s): ${NEW_SLUGS[*]}"
+    NEW_ITEMS_FOUND=$((NEW_ITEMS_FOUND + ${#NEW_SLUGS[@]}))
     for slug in "${NEW_SLUGS[@]}"; do
       check_limit || break
 
@@ -210,9 +214,16 @@ else
 fi
 
 # --- 完了 ---
-update_last_checked
+if [ "$NEW_ITEMS_FOUND" -gt 0 ]; then
+  update_last_checked
+fi
 
 echo ""
 echo "=== Done ==="
+echo "New items found: $NEW_ITEMS_FOUND"
 echo "Articles generated: $ARTICLES_GENERATED"
-echo "Last checked: $(jq -r '.last_checked' "$PROCESSED_FILE")"
+if [ "$NEW_ITEMS_FOUND" -gt 0 ]; then
+  echo "Last checked: $(jq -r '.last_checked' "$PROCESSED_FILE")"
+else
+  echo "No updates found. Skipping last_checked update."
+fi
