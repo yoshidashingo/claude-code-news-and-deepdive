@@ -41,8 +41,9 @@ GitHub Actions (毎日 09:00 UTC / 18:00 JST)
    ```bash
    bash scripts/seed-processed.sh
    ```
-3. GitHub リポジトリの Settings > Secrets and variables > Actions に `ANTHROPIC_API_KEY` を追加
-4. GitHub Actions の `workflow_dispatch` で手動テスト実行
+3. GitHub リポジトリの **Settings > Secrets and variables > Actions** で `ANTHROPIC_API_KEY` を追加
+4. GitHub リポジトリの **Settings > Actions > General** で **Workflow permissions** を **Read and write permissions** に変更（ブランチ作成・PR 作成に必要）
+5. GitHub Actions の **Actions** タブ > **Check Claude Code News** > **Run workflow** で手動テスト実行
 
 ## ファイル構成
 
