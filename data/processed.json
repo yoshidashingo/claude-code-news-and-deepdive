@@ -32,7 +32,12 @@
     "v2.1.4",
     "v2.1.41",
     "v2.1.42",
+    "v2.1.44",
+    "v2.1.45",
+    "v2.1.47",
+    "v2.1.49",
     "v2.1.5",
+    "v2.1.50",
     "v2.1.6",
     "v2.1.7",
     "v2.1.9"
@@ -266,5 +271,5 @@
     "mariano-florentino-long-term-benefit-trust",
     "servicenow-anthropic-claude"
   ],
-  "last_checked": "2026-02-14T09:13:36Z"
+  "last_checked": "2026-02-21T09:15:57Z"
 }
