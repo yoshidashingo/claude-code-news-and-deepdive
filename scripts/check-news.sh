@@ -5,7 +5,7 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 PROCESSED_FILE="$REPO_ROOT/data/processed.json"
-ARTICLES_DIR="$REPO_ROOT/articles"
+ARTICLES_DIR="$REPO_ROOT/docs"
 TODAY=$(date -u +"%Y-%m-%d")
 MAX_ARTICLES=5
 ARTICLES_GENERATED=0

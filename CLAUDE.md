@@ -5,7 +5,7 @@
 ## プロジェクト概要
 
 Claude Code のニュース・更新情報を監視し、日本語の詳細な技術解説記事を生成するシステムです。
-記事は `articles/` ディレクトリに Markdown ファイルとして出力します。
+記事は `docs/` ディレクトリに Markdown ファイルとして出力します。
 
 ## 記事テンプレート
 
@@ -77,12 +77,12 @@ identifier: "（バージョン番号またはスラッグ）"
 ## ファイル命名規則
 
 ```
-articles/YYYY-MM-DD-{source}-{identifier}.md
+docs/YYYY-MM-DD-{source}-{identifier}.md
 ```
 
-- **GitHub Release**: `articles/2026-02-07-github-release-v2.1.34.md`
-- **Changelog**: `articles/2026-02-07-changelog-v2.1.34.md`
-- **Blog**: `articles/2026-02-07-blog-claude-code-announcement.md`
+- **GitHub Release**: `docs/2026-02-07-github-release-v2.1.34.md`
+- **Changelog**: `docs/2026-02-07-changelog-v2.1.34.md`
+- **Blog**: `docs/2026-02-07-blog-claude-code-announcement.md`
 
 ## 注意事項
 
