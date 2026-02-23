@@ -50,7 +50,7 @@ GitHub Actions (毎日 09:00 UTC / 18:00 JST)
 ```
 ├── CLAUDE.md                          # 記事生成ガイドライン
 ├── README.md
-├── articles/                          # 生成された記事
+├── docs/                              # 生成された記事（GitHub Pages でホスト）
 │   └── YYYY-MM-DD-{source}-{id}.md
 ├── data/
 │   └── processed.json                 # 処理済み項目の状態管理

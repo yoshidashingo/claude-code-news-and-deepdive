@@ -49,7 +49,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git checkout -b "$BRANCH_NAME"
-          git add data/processed.json articles/
+          git add data/processed.json docs/
           git commit -m "$(cat <<'EOF'
           auto: update news articles and processed state
 
@@ -59,7 +59,7 @@ jobs:
           git push -u origin "$BRANCH_NAME"
 
           # 追加された記事ファイルを一覧化
-          ARTICLES=$(git diff --name-only main -- articles/ | sed 's/^/- /')
+          ARTICLES=$(git diff --name-only main -- docs/ | sed 's/^/- /')
           if [ -z "$ARTICLES" ]; then
             ARTICLES="- (記事なし / processed.json の更新のみ)"
           fi
