@@ -39,6 +39,9 @@ This stage generates code for each unit of work through two integrated parts:
   - Repository Layer Generation
   - Repository Layer Unit Testing
   - Repository Layer Summary
+  - Frontend Components Generation (if applicable)
+  - Frontend Components Unit Testing (if applicable)
+  - Frontend Components Summary (if applicable)
   - Database Migration Scripts (if data models exist)
   - Documentation Generation (API docs, README updates)
   - Deployment Artifacts Generation
@@ -84,7 +87,7 @@ This stage generates code for each unit of work through two integrated parts:
 - [ ] Mark the approval status clearly
 
 ## Step 9: Update Progress
-- [ ] Mark Code Planning complete in `aidlc-state.md`
+- [ ] Mark Code Generation Part 1 (Planning) complete in `aidlc-state.md`
 - [ ] Update the "Current Status" section
 - [ ] Prepare for transition to Code Generation
 
